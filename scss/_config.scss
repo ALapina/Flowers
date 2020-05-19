@@ -1,0 +1,90 @@
+$primary-color: #4D0000;
+$btn-color: #F3ADD4;
+$background-color: #FFF8F2;
+$root-font-size: 16px;
+
+@function rem($size) {
+  @return $size / $root-font-size * 1rem;
+}
+
+@mixin logo-style {
+  font-family: 'Montaga', serif;
+  font-size: rem(36px);
+  line-height: 44px;
+}
+
+@mixin headers-style {
+  font-family: 'Montaga', serif;
+  /*1.5vw - max font size, 1.5rem - min font size. This gives us nice and smooths responsive font-size. It's bigger in a large screen and smaller in a small screen sizes. No media query!*/
+  font-size: calc(1.5vw + 1.5rem);
+  line-height: 49px;
+  letter-spacing: 0.05em;
+}
+
+@mixin headers-style-small {
+  font-family: 'Montaga', serif;
+  font-size: rem(30px);
+  line-height: 39px;
+  letter-spacing: 0.05em;
+}
+
+@mixin welcome-style {
+  font-family: 'Rouge Script', cursive;
+  font-size: calc(5vw + 4rem);
+  line-height: 106px;
+}
+
+@mixin nav-style {
+  // font family from html
+  font-size: rem(24px);
+  line-height: 34px;
+}
+
+@mixin btn-style {
+  font-size: rem(26px);
+  line-height: 36px;
+}
+
+@mixin paragraphs-style {
+  font-size: rem(20px);
+  line-height: 32px;
+  /* or 160% */
+}
+
+@mixin paragraphs-bigger-style {
+  font-size: rem(20px);
+  line-height: 40px;
+  /* or 200% */
+}
+
+@mixin contact-number-style {
+  font-family: 'Rokkitt', serif;
+  font-size: rem(20px);
+  line-height: 32px;
+  /* or 160% */
+}
+
+@mixin background($back-url) {
+  background-image: $back-url;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+@mixin media-lg {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin media-md {
+  @media screen and (max-width: 768px) {
+      @content;
+  }
+}
+
+@mixin media-small {
+  @media screen and (max-width: 480px) {
+      @content;
+  }
+}

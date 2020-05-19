@@ -1,0 +1,93 @@
+.navigation{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: $background-color;
+
+  .header__content{
+    display: grid;
+    grid-template-columns: 1fr 2fr auto;
+    //Not sure if we need to declare rows here.
+    grid-template-rows: 1fr auto;
+    grid-template-areas: 
+    'logo navigation cart';
+    align-items: center;
+
+    .logo_header{
+      grid-area: logo;
+      margin: 19px 0;
+    }
+
+    .nav-toggle {
+      display: none;
+    }
+
+    .nav-toggle-label{
+      display: none;
+      grid-area: hamburger;
+      cursor: pointer;
+    }
+
+    nav{
+      grid-area: navigation;
+        
+      ul{
+        @include nav-style;
+
+        li::after {
+          content: '|';
+          padding: rem(35px);
+          color: #FBBE74;
+        }
+
+        li:last-child:after {
+          content: '';
+        }
+      }
+    }
+
+    .cart {
+      grid-area: cart;
+      display: flex;
+      align-self: center;
+    }
+  }
+}
+
+
+
+.footer{
+  background: linear-gradient(0deg, #FFF8F2, #FFF8F2), #FFFFFF;
+
+  ul {
+    @include paragraphs-style; 
+    padding-bottom: 55px;
+
+    li{
+      padding-top: 23px;
+      margin-left: 35px;
+    }
+  }
+
+  .logo_footer{
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  p{
+    text-align: center;
+
+    &:last-child{
+      margin: 0;
+      padding-bottom: 20px;
+    }
+  }
+}
+
+
+

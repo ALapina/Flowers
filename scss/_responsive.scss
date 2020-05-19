@@ -1,0 +1,182 @@
+@include media-lg {
+  .header{
+    .header__content{
+      grid-template-columns: auto 1fr auto;
+      grid-template-areas: 
+      'hamburger     logo          cart'
+      'navigation navigation navigation';
+
+      .logo_header{
+        text-align: center;
+      }
+
+      nav {
+
+        height: 0px;
+        //hide navigation panel
+        transform: scale(1, 0);
+        //from where navigation will start to show on
+        transform-origin: top;
+        transition: all 400ms ease-in-out;
+
+        ul {
+          flex-direction: column;
+  
+          li{
+            padding: .4em 0;
+          }
+  
+          li::after{
+            content: '';
+            display: none;
+          }
+
+          a {
+            //hide text for smooth open/close animation
+            opacity: 0;
+            transition: opacity 150ms ease-in-out;
+          }
+        }
+      
+      }
+
+      .nav-toggle-label{
+        display: block;
+        
+        //Hamburger menu
+        span, 
+        span::before, 
+        span::after {
+          display: inline-block;
+          background: $primary-color;
+          height: 2px;
+          width: 30px;
+          border-radius: 2px;
+          position: relative;
+          transition: all ease-in-out 400ms;
+        }
+
+        span::before{
+          content: '';
+          position: absolute;
+          bottom: 7px;
+        }
+
+        span::after{
+          content: '';
+          position: absolute;
+          top: 7px;
+        }
+      }
+
+      //When nav-toggle is checked then it's looking for nearest nav
+      .nav-toggle:checked ~ nav{ 
+        //and shows nav bar
+        padding-bottom: 210px;
+        transform: scale(1, 1);
+        transition: all 400ms ease-in-out;
+      }
+
+      .nav-toggle:checked ~ nav a {
+        //show text for smooth open/close animation
+        opacity: 1; 
+        transition: opacity 250ms ease-in-out 250ms; 
+      }
+
+      //hamburger rotate animation
+      .nav-toggle:checked ~ .nav-toggle-label {
+        transform: rotate(45deg);
+      }
+
+      //hide one of span to make hamburger to X
+      .nav-toggle:checked ~ .nav-toggle-label span::before {
+        opacity: 0;
+      }
+
+      //rotate one of span to make hamburger to X
+      .nav-toggle:checked ~ .nav-toggle-label span::after {
+        transform: translateY(-7px) rotate(-90deg);
+      }
+    }
+  }
+  
+  .banner {
+    .banner-wrapper{
+      .banner__text {
+        width: 56%;
+      }
+    }
+  }
+}
+
+@include media-md {
+  .promo {
+    .promo-wrapper{
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: 
+    'text text'
+    'img1 img2'
+    'none btn';
+    }
+  }
+
+  .about{
+    .about-wrapper{
+      .about__img{
+        display: block;
+        float: none;
+        padding: 0;
+        margin: 0 auto;
+      }
+    }
+  }
+  
+}
+
+@include media-small {
+  .banner {
+    .banner-wrapper{
+      .banner__text {
+        width: 86%;
+      }
+    }
+  }
+
+  .promo{
+    .promo-wrapper{
+      grid-template-columns: 1fr;
+      grid-template-areas: 
+      'text'
+      'img1'
+      'img2'
+      'btn';
+
+      .promo__img_bottom{
+        margin-top: 0;
+      }
+
+      .promo__img{
+        justify-self: center;
+        width: 85%;
+      }
+
+      .promo__btn {
+        margin-top: 30px;
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  .footer{
+    ul{
+      flex-wrap: wrap;
+
+      li{
+        //helps to align text by left
+        flex-basis: 100px;
+      }
+    } 
+  }
+}
+
+

@@ -1,0 +1,144 @@
+.banner{
+  @include background(url(/images/banner.jpg));
+  background-position: center;
+
+  .banner-wrapper{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .banner__title{
+      margin-bottom: 4.4166%;
+      @include welcome-style;
+    }
+    
+    .banner__text {
+      width: 36%;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      /* Note: backdrop-filter has minimal browser support */
+      border-radius: 16px;
+      margin-bottom: 100px;
+      padding: 5px;
+    }
+
+    .banner__btn {
+      padding-bottom: 50px;
+      }
+  }
+}
+
+.congratulations{
+  @include background(url(/images/promoBack.jpg));
+}
+
+.home{
+  @include background(url(/images/promo2Back.jpg));
+}
+
+.promo{
+  .promo-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    'text img1 img2'
+    'none none btn';
+    grid-gap: 20px;
+
+    .promo__text{
+      align-self: center;
+      grid-area: text;
+    }
+
+    .promo__img{
+      width: 100%;
+    }
+
+    .promo__img_bottom{
+      margin-top: 80px;
+    }
+
+    .img1{
+      grid-area: img1;
+    }
+
+    .img2{
+      grid-area: img2;
+    }
+
+    .promo__btn{
+      grid-column-end: -1;
+      justify-self: center;
+      margin-top: -40px;
+      grid-area: btn;
+    }
+  }   
+}
+
+.review {
+  @include background(url(/images/reviewBack.jpg));
+
+  .review-wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+
+    .review__comment{
+      display: grid;
+      justify-items: center;
+      grid-gap: 20px;
+
+      p {
+        background: #FFFFFF;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        width: 77%;
+        padding: 10px;
+        position: relative;
+
+        //triangle tooltip
+        &::after{
+          content: '';
+          display: block;
+          position: absolute;
+          top: -14px;
+          left: 75px;
+          background: #FFFFFF;
+          border-top: 1px solid rgba(0, 0, 0, 0.2);
+          border-left: 1px solid rgba(0, 0, 0, 0.2);
+          width: 27px;
+          height: 27px;
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+}
+
+.about{
+  @include background(url(/images/aboutBack.jpg));
+
+  .about-wrapper{
+    margin-bottom: 6%;
+
+    .about__img{
+      border-radius: 5px;
+      float: left;
+      padding-right: 30px;
+      max-width: 100%;
+    }
+  }
+}
+
+.contacts{
+  @include background(url(/images/contactsBack.jpg));
+
+  .contacts__title{
+    padding-bottom: 2.666%;
+  }
+
+  .contacts_number{
+    @include contact-number-style;
+  }
+}
