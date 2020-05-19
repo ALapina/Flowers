@@ -1,5 +1,5 @@
 .banner{
-  @include background(url(/images/banner.jpg));
+  @include background(url(../images/banner.jpg));
   background-position: center;
 
   .banner-wrapper{
@@ -30,11 +30,11 @@
 }
 
 .congratulations{
-  @include background(url(/images/promoBack.jpg));
+  @include background(url(../images/promoBack.jpg));
 }
 
 .home{
-  @include background(url(/images/promo2Back.jpg));
+  @include background(url(../images/promo2Back.jpg));
 }
 
 .promo{
@@ -77,7 +77,7 @@
 }
 
 .review {
-  @include background(url(/images/reviewBack.jpg));
+  @include background(url(../images/reviewBack.jpg));
 
   .review-wrapper{
     display: grid;
@@ -117,7 +117,7 @@
 }
 
 .about{
-  @include background(url(/images/aboutBack.jpg));
+  @include background(url(../images/aboutBack.jpg));
 
   .about-wrapper{
     margin-bottom: 6%;
@@ -132,7 +132,7 @@
 }
 
 .contacts{
-  @include background(url(/images/contactsBack.jpg));
+  @include background(url(../images/contactsBack.jpg));
 
   .contacts__title{
     padding-bottom: 2.666%;

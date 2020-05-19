@@ -108,7 +108,7 @@
 }
 
 .banner {
-  background-image: url(/images/banner.jpg);
+  background-image: url(../images/banner.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -151,13 +151,13 @@
 }
 
 .congratulations {
-  background-image: url(/images/promoBack.jpg);
+  background-image: url(../images/promoBack.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .home {
-  background-image: url(/images/promo2Back.jpg);
+  background-image: url(../images/promo2Back.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -211,7 +211,7 @@
 }
 
 .review {
-  background-image: url(/images/reviewBack.jpg);
+  background-image: url(../images/reviewBack.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -256,7 +256,7 @@
 }
 
 .about {
-  background-image: url(/images/aboutBack.jpg);
+  background-image: url(../images/aboutBack.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -273,7 +273,7 @@
 }
 
 .contacts {
-  background-image: url(/images/contactsBack.jpg);
+  background-image: url(../images/contactsBack.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
